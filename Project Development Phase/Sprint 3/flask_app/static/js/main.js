@@ -4,7 +4,6 @@ $(document).ready(function () {
     $('.loader').hide();
     $('#result').hide();
 
-    // Upload Preview
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -13,6 +12,7 @@ $(document).ready(function () {
                 $('#imagePreview').hide();
                 $('#imagePreview').fadeIn(650);
             }
+            
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -37,7 +37,7 @@ $(document).ready(function () {
             type: 'POST',
             url: '/predict',
             data: form_data,
-            contentType: false,
+            contentType:  false,
             cache: false,
             processData: false,
             async: true,
